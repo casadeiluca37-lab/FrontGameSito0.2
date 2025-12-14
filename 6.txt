@@ -1,0 +1,52 @@
+window.addEventListener('keydown', (e) => {
+    keys[e.key] = true;
+  });
+  window.addEventListener('keyup', (e) => {
+    keys[e.key] = false;
+  });
+
+  function gameLoop() {
+    // muovi player
+    if (keys['ArrowRight']) player.x += player.speed;
+    if (keys['ArrowLeft']) player.x -= player.speed;
+    if (keys[' '] || keys['Spacebar']) {
+      if (!player.jumping) {
+        player.vy = -12;
+        player.jumping = true;
+      }
+    }
+
+    // gravità e salto
+    player.vy += gravity;
+    player.y += player.vy;
+
+    // collisione con il terreno
+    if (player.y > ground) {
+      player.y = ground;
+      player.vy = 0;
+      player.jumping = false;
+    }
+
+    // limiti canvas
+    if (player.x < 0) player.x = 0;
+    if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
+
+    // disegna sfondo
+    ctx.fillStyle = '#121212';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // disegna player
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.width, player.height);
+
+    // disegna terreno
+    ctx.fillStyle = '#333';
+    ctx.fillRect(0, ground + player.height, canvas.width, canvas.height - ground - player.height);
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  // Avvia gioco
+  gameLoop();
+
+  // Mostra home di default

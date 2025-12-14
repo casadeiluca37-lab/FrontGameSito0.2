@@ -1,0 +1,41 @@
+</nav>
+
+<section id="home">
+  <h2>Benvenuto in FrontGame</h2>
+  <p>FrontGame è un battle royale 3D che ti porta in un mondo pieno di azione, strategia e avventura! 💥</p>
+  <a href="#" class="download-btn">Scarica ora</a>
+</section>
+
+<section id="trailer" style="display:none">
+  <h2>Trailer Ufficiale 🎬</h2>
+  <div class="video-container">
+    <video controls>
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+      Il tuo browser non supporta il video.
+    </video>
+  </div>
+</section>
+
+<section id="screenshots" style="display:none">
+  <h2>Screenshot 📸</h2>
+  <div class="screenshots">
+    <div>Immagine 1</div>
+    <div>Immagine 2</div>
+    <div>Immagine 3</div>
+    <div>Immagine 4</div>
+  </div>
+</section>
+
+<section id="download" style="display:none">
+  <h2>Download 📥</h2>
+  <p>Clicca sul pulsante per scaricare FrontGame. (Download simulato)</p>
+  <a href="#" class="download-btn">Scarica FrontGame</a>
+</section>
+
+<section id="login" style="display:none">
+  <h2>Login 🔐</h2>
+  <form onsubmit="event.preventDefault(); alert('Login simulato!');">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" required placeholder="Inserisci username" />
+    </div>

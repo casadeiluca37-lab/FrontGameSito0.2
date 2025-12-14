@@ -1,0 +1,33 @@
+<div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" required placeholder="Inserisci password" />
+    </div>
+    <input type="submit" value="Accedi" />
+  </form>
+</section>
+
+<section id="forum" style="display:none">
+  <h2>Forum 💬</h2>
+  <div class="forum-posts" id="forumPosts">
+    <div class="forum-post">Utente1: Che figata questo gioco!</div>
+    <div class="forum-post">Utente2: Quando esce la prossima mappa?</div>
+  </div>
+  <form onsubmit="addForumPost(event)">
+    <input type="text" id="newPost" placeholder="Scrivi un commento..." required style="width: 80%; padding: 0.5rem; border-radius: 4px; border: 1px solid #555; background:#333; color:#eee;" />
+    <input type="submit" value="Invia" style="padding: 0.5rem 1rem; cursor:pointer;" />
+  </form>
+</section>
+
+<section id="leaderboard" style="display:none" class="leaderboard">
+  <h2>Leaderboard 🏆</h2>
+  <table>
+    <thead>
+      <tr><th>Posizione</th><th>Giocatore</th><th>Punteggio</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>PlayerOne</td><td>9500</td></tr>
+      <tr><td>2</td><td>GamerX</td><td>8600</td></tr>
+      <tr><td>3</td><td>Speedster</td><td>8000</td></tr>
+      <tr><td>4</td><td>ShadowNinja</td><td>7800</td></tr>
+    </tbody>
+  </table>

@@ -1,0 +1,49 @@
+</section>
+
+<section id="game" style="display:none">
+  <h2>Mini Gioco 2D 🎮</h2>
+  <canvas id="gameCanvas" width="480" height="320"></canvas>
+  <p style="text-align:center; margin-top:0.5rem;">Usa le frecce ← → per muoverti, spazio per saltare.</p>
+</section>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(s => s.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+
+  // Forum post add
+  function addForumPost(e) {
+    e.preventDefault();
+    const input = document.getElementById('newPost');
+    const text = input.value.trim();
+    if(text === '') return;
+    const container = document.getElementById('forumPosts');
+    const div = document.createElement('div');
+    div.className = 'forum-post';
+    div.textContent = 'Tu: ' + text;
+    container.appendChild(div);
+    input.value = '';
+    container.scrollTop = container.scrollHeight;
+  }
+
+  // Mini game 2D semplice
+  const canvas = document.getElementById('gameCanvas');
+  const ctx = canvas.getContext('2d');
+
+  let player = {
+    x: 50,
+    y: 280,
+    width: 30,
+    height: 50,
+    color: '#0d6efd',
+    vy: 0,
+    jumping: false,
+    speed: 4
+  };
+
+  const gravity = 0.7;
+  const ground = 320 - player.height;
+
+  const keys = {};
